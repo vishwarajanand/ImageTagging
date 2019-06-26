@@ -4,7 +4,7 @@ This page loads images from third party websites. So, in order to allow them do 
 
 
 # Demo
-Hosted [here](), keep refreshing to see new tags.
+Hosted [here](https://vishwarajanand.github.io/ImageTagging/), keep refreshing to see new tags.
 
 # Extend
 Add new image urls in `sketch.js` to see new tags.
