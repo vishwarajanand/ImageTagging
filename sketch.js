@@ -28,7 +28,8 @@ function gotResult(error, results) {
     console.log(results);
     createDiv('Actual Labels: ' + data[dataid]["tag"]);
     createDiv('Derived Labels: ' + results[0].label);
-    createDiv('Confidence: ' + nf(results[0].confidence, 0, 2));
+    createDiv('Confidence score: ' + nf(results[0].confidence, 0, 2));
     createDiv('Credits: <a href="' + data[dataid]["url"] + '">URL</a>');
+    createDiv('<a href="#" onClick="openWindowReload(this)">Refresh</a>');
   }
 }
