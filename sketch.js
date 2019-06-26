@@ -1,22 +1,15 @@
 // Initialize the Image Classifier method with MobileNet. A callback needs to be passed.
 let classifier;
-
-// A variable to hold the image we want to classify
-let urls = [
-    'http://media.expedia.com/hotels/1000000/590000/580300/580269/9911d26c_z.jpg',
-    'http://media.expedia.com/hotels/1000000/590000/580300/580269/5dfa4780_z.jpg',
-    'http://media.expedia.com/hotels/1000000/590000/580300/580269/01343210_z.jpg',
-    'http://media.expedia.com/hotels/1000000/590000/580300/580269/04585ca6_z.jpg',
-    'http://media.expedia.com/hotels/1000000/590000/580300/580269/cdd63300_z.jpg',
-  ];
+// A variable to hold which image in data array is being classified
+let dataid = 0;
 let img;
 
 function preload() {
   classifier = ml5.imageClassifier('MobileNet');
-  var max = urls.length - 1;
+  var max = data.length - 1;
   var min = 0;
-  var random = Math.floor(Math.random() * (+max - +min)) + +min
-  img = loadImage(urls[random]);
+  dataid = Math.floor(Math.random() * (+max - +min)) + +min;
+  img = loadImage(data[dataid]["url"]);
 }
 
 function setup() {
@@ -33,7 +26,9 @@ function gotResult(error, results) {
   } else {
     // The results are in an array ordered by confidence.
     console.log(results);
-    createDiv('Label: ' + results[0].label);
+    createDiv('Actual Labels: ' + data[dataid]["tag"]);
+    createDiv('Derived Labels: ' + results[0].label);
     createDiv('Confidence: ' + nf(results[0].confidence, 0, 2));
+    createDiv('Credits: <a href="' + data[dataid]["url"] + '">URL</a>');
   }
 }
