@@ -24,7 +24,7 @@ function getImageResolution(varA, varB) {
     } else {
        var img = new Image();
        img.src = varA;
-       img.onload = getMeta(this.width, this.height);
+       img.onload = getImageResolution(this.width, this.height);
     }
 }
 
