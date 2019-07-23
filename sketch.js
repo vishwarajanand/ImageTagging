@@ -18,6 +18,16 @@ function setup() {
   image(img, 0, 0);
 }
 
+function getImageResolution(varA, varB) {
+    if (typeof varB !== 'undefined') {
+       alert(varA + 'x' + varB);
+    } else {
+       var img = new Image();
+       img.src = varA;
+       img.onload = getMeta(this.width, this.height);
+    }
+}
+
 // A function to run when we get any errors and the results
 function gotResult(error, results) {
   // Display error in the console
@@ -26,6 +36,7 @@ function gotResult(error, results) {
   } else {
     // The results are in an array ordered by confidence.
     console.log(results);
+    createDiv('Image Resolution: ' + getImageResolution(data[dataid]["url"]));
     createDiv('Actual Labels: ' + data[dataid]["tag"]);
     createDiv('Derived Labels: ' + results[0].label);
     createDiv('Confidence score: ' + nf(results[0].confidence, 0, 2));
