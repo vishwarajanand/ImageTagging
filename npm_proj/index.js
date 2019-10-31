@@ -1,11 +1,12 @@
 import * as mobilenet from '@tensorflow-models/mobilenet';
-const data = require('./data.js');
+var data = require('./data.js');
+data = data.data;
 
-const image = readImage(path)
+const image = readImage(data[0].url)
 // Load the model.
-const model = await mobilenet.load();
+// const model = await mobilenet.load();
  
 // Classify the image.
-const predictions = await model.classify(img); 
+// const predictions = await model.classify(img); 
 console.log('Predictions: ');
-console.log(predictions);
+// console.log(predictions);
