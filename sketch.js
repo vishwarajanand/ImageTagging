@@ -39,10 +39,10 @@ function gotResult(error, results) {
     // The results are in an array ordered by confidence.
     console.log(results);
     getImageResolution(data[dataid]["url"]);
-    createDiv('Actual Labels: ' + data[dataid]["tag"]);
+    createDiv('Actual Labels (not used for auto tagging): ' + data[dataid]["tag"]);
     createDiv('Derived Labels: ' + results[0].label);
     createDiv('Confidence score: ' + nf(results[0].confidence, 0, 2));
     createDiv('Credits: <a href="' + data[dataid]["url"] + '">URL</a>');
-    createDiv('<a href="#" onClick="openWindowReload(this)">Refresh</a>');
+    createDiv('<a href=".">Refresh</a>');
   }
 }

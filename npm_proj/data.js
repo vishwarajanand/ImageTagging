@@ -1223,3 +1223,7 @@ var data = [{"url": "http://media.expedia.com/hotels/1000000/590000/580300/58026
 {"url": "http://res.hoteltravel.com/chile/la_serena/hotels_resorts/costa_real_room3.jpg", "tag": "Costa Real Hotel La Serena-costa_real_room3.jpgLa Serena"},
 {"url": "http://media.expedia.com/hotels/2000000/1380000/1378900/1378806/5b5e03aa_z.jpg", "tag": "Guestroom"}
 ];
+
+module.exports ={
+    data:data
+}
